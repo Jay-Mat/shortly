@@ -17,17 +17,15 @@ pipeline {
                
             }
         }
-    }
-
-    stages {
-        stage('Containerization') {
+          stage('Containerization') {
             steps {
                 sh 'docker login -u jaymath237 -p Jstorm237'
-                sh 'docker build -t shortly:v1 .'
-                sh 'docker tag shortly:v1 jaymath237'
-                sh 'docker push jaymath237/shortly:v1'
+                sh 'docker build -t shortly:${BUILD_NUMBER} .'
+                sh 'docker tag shortly:${BUILD_NUMBER} jaymath237'
+                sh 'docker push jaymath237/shortly:${BUILD_NUMBER}'
             }
         }
+
     }
 
 }
