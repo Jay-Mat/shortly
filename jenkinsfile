@@ -22,7 +22,7 @@ pipeline {
                 sh 'docker login -u jaymath237 -p Jstorm237'
                 sh 'docker build -t shortly:${BUILD_NUMBER} .'
                 sh 'docker tag shortly:${BUILD_NUMBER} jaymath237'
-                sh 'docker push jaymath237/shortly:${BUILD_NUMBER}'
+                sh 'docker push jaymath237/shortly'
             }
         }
 
